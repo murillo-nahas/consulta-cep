@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cep } from '../models/cep';
+import { Cep } from '../models/cep.model';
 import { CepService } from '../services/cep.service';
 
 @Component({
@@ -10,16 +10,15 @@ import { CepService } from '../services/cep.service';
 export class GetCepComponent implements OnInit {
   constructor(private cepService: CepService) {}
 
-  cep: Cep | any;
+  cep: string = '17347-240';
 
   ngOnInit(): void {
-    this.getCepByCode();
+    this.getCepByCode(this.cep);
   }
 
-  getCepByCode(): void {
-    this.cepService.getCep().subscribe({
+  getCepByCode(cep: string): void {
+    this.cepService.getCep(cep).subscribe({
       next: (res) => {
-        this.cep = res;
         console.log(res);
       },
       error: (err) => console.log(err),

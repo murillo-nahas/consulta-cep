@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Cep } from '../models/cep';
 
 @Injectable({
   providedIn: 'root',
@@ -9,9 +8,7 @@ import { Cep } from '../models/cep';
 export class CepService {
   constructor(private http: HttpClient) {}
 
-  cep: string = '17347-240';
-
-  getCep(): Observable<Cep> {
-    return this.http.get<Cep>(`//viacep.com.br/ws/${this.cep}/json`);
+  getCep(cep: string) {
+    return this.http.get(`//viacep.com.br/ws/${cep}/json`);
   }
 }
