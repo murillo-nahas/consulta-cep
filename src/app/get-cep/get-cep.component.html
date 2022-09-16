@@ -1,35 +1,18 @@
-<form #f="ngForm">
-  <label for="cep">Cep</label>
-  <input
-    type="text"
-    id="cep"
-    name="cep"
-    ngModel
-    #cep="ngModel"
-    (change)="getCepByCode($any($event.target).value, f)"
-  />
+<form [formGroup]="formCep">
+  <label for="cep">CEP: </label>
+  <input type="text" id="cep" formControlName="cep" #cepValue />
 
-  <label for="logradouro">Logradouro</label>
-  <input
-    type="text"
-    id="logradouro"
-    name="logradouro"
-    ngModel
-    #logradouro="ngModel"
-  />
+  <label for="logradouro">Logradouro: </label>
+  <input type="text" id="logradouro" formControlName="logradouro" />
 
-  <label for="bairro">Bairro</label>
-  <input type="text" id="bairro" name="bairro" ngModel #bairro="ngModel" />
+  <label for="bairro">Bairro: </label>
+  <input type="text" id="bairro" formControlName="bairro" />
 
-  <label for="cidade">Cidade</label>
-  <input
-    type="text"
-    id="localidade"
-    name="localidade"
-    ngModel
-    #localidade="ngModel"
-  />
+  <label for="localidade">Localidade: </label>
+  <input type="text" id="localidade" formControlName="localidade" />
 
-  <label for="uf">Uf</label>
-  <input type="text" id="uf" name="uf" ngModel #uf="ngModel" />
+  <label for="uf">UF: </label>
+  <input type="text" id="uf" formControlName="uf" />
+
+  <button (click)="updateForm()">Clicar</button>
 </form>

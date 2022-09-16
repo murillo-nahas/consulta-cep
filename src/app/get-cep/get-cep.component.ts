@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Cep } from '../models/cep.model';
 import { CepService } from '../services/cep.service';
 
@@ -8,24 +9,46 @@ import { CepService } from '../services/cep.service';
   styleUrls: ['./get-cep.component.scss'],
 })
 export class GetCepComponent implements OnInit {
-  constructor(private cepService: CepService) {}
+  @ViewChild('cepValue') cepValue!: ElementRef;
 
-  ngOnInit(): void {}
+  constructor(private cepService: CepService, private fb: FormBuilder) {}
 
-  getCepByCode(cep: any, form: any): void {
+  passCep: string = '17347-240';
+
+  cep: any;
+
+  formCep!: FormGroup;
+
+  ngOnInit(): void {
+    this.getCepByCode(this.passCep);
+    this.createForm();
+  }
+
+  getCepByCode(cep: any): void {
     this.cepService.getCep(cep).subscribe({
-      next: (res) => this.fillForm(res, form),
+      next: (res: any) => {
+        this.cep = Object.keys(res).map((key: any) => res[key]);
+      },
       error: (err) => console.log(err),
     });
   }
 
-  fillForm(res: any, form: any): void {
-    form.setValue({
-      cep: res.cep,
-      logradouro: res.logradouro,
-      bairro: res.bairro,
-      localidade: res.localidade,
-      uf: res.uf,
+  createForm() {
+    this.formCep = this.fb.group({
+      cep: ['', Validators.required],
+      logradouro: [''],
+      bairro: [''],
+      localidade: [''],
+      uf: [''],
+    });
+  }
+
+  updateForm() {
+    this.formCep.patchValue({
+      logradouro: this.cep[1],
+      bairro: this.cep[3],
+      localidade: this.cep[4],
+      uf: this.cep[5],
     });
   }
 }
