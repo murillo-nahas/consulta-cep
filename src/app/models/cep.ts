@@ -1,3 +1,7 @@
 export interface Cep {
-  //some goes here
+  cep: string;
+  street: string;
+  district: string;
+  state: string;
+  city: string;
 }
