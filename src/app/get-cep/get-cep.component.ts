@@ -10,18 +10,22 @@ import { CepService } from '../services/cep.service';
 export class GetCepComponent implements OnInit {
   constructor(private cepService: CepService) {}
 
-  cep: string = '17347-240';
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    this.getCepByCode(this.cep);
+  getCepByCode(cep: any, form: any): void {
+    this.cepService.getCep(cep).subscribe({
+      next: (res) => this.fillForm(res, form),
+      error: (err) => console.log(err),
+    });
   }
 
-  getCepByCode(cep: string): void {
-    this.cepService.getCep(cep).subscribe({
-      next: (res) => {
-        console.log(res);
-      },
-      error: (err) => console.log(err),
+  fillForm(res: any, form: any): void {
+    form.setValue({
+      cep: res.cep,
+      logradouro: res.logradouro,
+      bairro: res.bairro,
+      localidade: res.localidade,
+      uf: res.uf,
     });
   }
 }

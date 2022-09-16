@@ -1,1 +1,35 @@
+<form #f="ngForm">
+  <label for="cep">Cep</label>
+  <input
+    type="text"
+    id="cep"
+    name="cep"
+    ngModel
+    #cep="ngModel"
+    (change)="getCepByCode($any($event.target).value, f)"
+  />
 
+  <label for="logradouro">Logradouro</label>
+  <input
+    type="text"
+    id="logradouro"
+    name="logradouro"
+    ngModel
+    #logradouro="ngModel"
+  />
+
+  <label for="bairro">Bairro</label>
+  <input type="text" id="bairro" name="bairro" ngModel #bairro="ngModel" />
+
+  <label for="cidade">Cidade</label>
+  <input
+    type="text"
+    id="localidade"
+    name="localidade"
+    ngModel
+    #localidade="ngModel"
+  />
+
+  <label for="uf">Uf</label>
+  <input type="text" id="uf" name="uf" ngModel #uf="ngModel" />
+</form>
