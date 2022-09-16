@@ -1,18 +1,25 @@
-<form [formGroup]="formCep">
-  <label for="cep">CEP: </label>
-  <input type="text" id="cep" formControlName="cep" #cepValue />
+<mat-card class="mat-card">
+  <mat-card-title>Consultar CEP</mat-card-title>
+  <mat-card-subtitle
+    >Insira seu CEP abaixo para gerar o endereço desejado</mat-card-subtitle
+  >
 
-  <label for="logradouro">Logradouro: </label>
-  <input type="text" id="logradouro" formControlName="logradouro" />
+  <form [formGroup]="formCep">
+    <label for="cep">CEP: </label>
+    <input type="text" id="cep" formControlName="cep" #cepValue />
 
-  <label for="bairro">Bairro: </label>
-  <input type="text" id="bairro" formControlName="bairro" />
+    <label for="logradouro">Logradouro: </label>
+    <input type="text" id="logradouro" formControlName="logradouro" />
 
-  <label for="localidade">Localidade: </label>
-  <input type="text" id="localidade" formControlName="localidade" />
+    <label for="bairro">Bairro: </label>
+    <input type="text" id="bairro" formControlName="bairro" />
 
-  <label for="uf">UF: </label>
-  <input type="text" id="uf" formControlName="uf" />
+    <label for="localidade">Localidade: </label>
+    <input type="text" id="localidade" formControlName="localidade" />
 
-  <button (click)="updateForm()">Clicar</button>
-</form>
+    <label for="uf">UF: </label>
+    <input type="text" id="uf" formControlName="uf" />
+
+    <button (click)="updateForm()">Clicar</button>
+  </form>
+</mat-card>
