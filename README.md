@@ -23,7 +23,7 @@ Você pode rodar o projeto localmente da seguinte forma:
 E então acesse pelo `localhost:4200`
 
 Ou acesse pelo link:
-//
+[Acesse aqui](consulta-cep-two.vercel.app)
 
 ### Materiais
 
