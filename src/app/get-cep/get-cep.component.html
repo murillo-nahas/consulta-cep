@@ -6,7 +6,13 @@
 
   <form [formGroup]="formCep">
     <label for="cep">CEP: </label>
-    <input type="text" id="cep" formControlName="cep" #cepValue />
+    <input
+      type="text"
+      id="cep"
+      formControlName="cep"
+      #cep
+      (blur)="getCepByCode(cep.value)"
+    />
 
     <label for="logradouro">Logradouro: </label>
     <input type="text" id="logradouro" formControlName="logradouro" />

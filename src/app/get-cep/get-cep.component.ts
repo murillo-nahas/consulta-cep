@@ -1,6 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Cep } from '../models/cep.model';
 import { CepService } from '../services/cep.service';
 
 @Component({
@@ -13,14 +12,13 @@ export class GetCepComponent implements OnInit {
 
   constructor(private cepService: CepService, private fb: FormBuilder) {}
 
-  passCep: string = '17347-240';
+  passCep: string = '';
 
   cep: any;
 
   formCep!: FormGroup;
 
   ngOnInit(): void {
-    this.getCepByCode(this.passCep);
     this.createForm();
   }
 
