@@ -1,31 +1,114 @@
 <mat-card class="mat-card">
   <mat-card-title>Consultar CEP</mat-card-title>
   <mat-card-subtitle
-    >Insira seu CEP abaixo para gerar o endereço desejado</mat-card-subtitle
+    >Insira seu CEP e clique no botão para gerar as informações de seu
+    endereço.</mat-card-subtitle
   >
 
-  <form [formGroup]="formCep">
-    <label for="cep">CEP: </label>
-    <input
-      type="text"
-      id="cep"
-      formControlName="cep"
-      #cep
-      (blur)="getCepByCode(cep.value)"
-    />
+  <form [formGroup]="formCep" class="form-group">
+    <div class="input-group">
+      <label for="cep">CEP: </label>
+      <input
+        type="text"
+        id="cep"
+        formControlName="cep"
+        #cep
+        (blur)="getCepByCode(cep.value)"
+        class="input-cep"
+        placeholder="00000-00"
+      />
+    </div>
 
-    <label for="logradouro">Logradouro: </label>
-    <input type="text" id="logradouro" formControlName="logradouro" />
+    <div class="button-group">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="updateForm()"
+        class="button"
+      >
+        Consultar CEP
+      </button>
 
-    <label for="bairro">Bairro: </label>
-    <input type="text" id="bairro" formControlName="bairro" />
+      <button
+        mat-raised-button
+        color="warn"
+        (click)="resetForm()"
+        class="button"
+      >
+        Limpar Campos
+      </button>
+    </div>
 
-    <label for="localidade">Localidade: </label>
-    <input type="text" id="localidade" formControlName="localidade" />
+    <div class="input-group-row">
+      <div class="input-group">
+        <label for="logradouro">Logradouro: </label>
+        <div>
+          <input
+            type="text"
+            id="logradouro"
+            formControlName="logradouro"
+            class="input"
+            placeholder="Rua"
+            #logradouro
+          />
+          <mat-icon [cdkCopyToClipboard]="logradouro.value" class="mat-icon"
+            >link</mat-icon
+          >
+        </div>
+      </div>
 
-    <label for="uf">UF: </label>
-    <input type="text" id="uf" formControlName="uf" />
+      <div class="input-group margin-left">
+        <label for="bairro">Bairro: </label>
+        <div>
+          <input
+            type="text"
+            id="bairro"
+            formControlName="bairro"
+            class="input"
+            placeholder="Bairro"
+            #bairro
+          />
+          <mat-icon [cdkCopyToClipboard]="bairro.value" class="mat-icon"
+            >link</mat-icon
+          >
+        </div>
+      </div>
+    </div>
 
-    <button (click)="updateForm()">Clicar</button>
+    <div class="input-group-row">
+      <div class="input-group">
+        <label for="localidade">Cidade: </label>
+        <div>
+          <input
+            type="text"
+            id="localidade"
+            formControlName="localidade"
+            class="input"
+            placeholder="Cidade"
+            #cidade
+          />
+          <mat-icon [cdkCopyToClipboard]="cidade.value" class="mat-icon"
+            >link</mat-icon
+          >
+        </div>
+      </div>
+
+      <div class="input-group margin-left">
+        <label for="uf">UF: </label>
+        <div>
+          <input
+            type="text"
+            id="uf"
+            formControlName="uf"
+            class="input"
+            placeholder="UF"
+            #uf
+          />
+          <mat-icon [cdkCopyToClipboard]="uf.value" class="mat-icon"
+            >link</mat-icon
+          >
+        </div>
+      </div>
+    </div>
   </form>
 </mat-card>

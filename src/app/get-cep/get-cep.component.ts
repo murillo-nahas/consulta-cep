@@ -1,9 +1,30 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 import { CepService } from '../services/cep.service';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 @Component({
+  standalone: true,
   selector: 'app-get-cep',
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatIconModule,
+    MatInputModule,
+    MatButtonModule,
+    ClipboardModule,
+  ],
   templateUrl: './get-cep.component.html',
   styleUrls: ['./get-cep.component.scss'],
 })
@@ -27,17 +48,17 @@ export class GetCepComponent implements OnInit {
       next: (res: any) => {
         this.cep = Object.keys(res).map((key: any) => res[key]);
       },
-      error: (err) => console.log(err),
+      error: (err) => console.error('Something is wrong: ', err),
     });
   }
 
   createForm() {
     this.formCep = this.fb.group({
       cep: ['', Validators.required],
-      logradouro: [''],
-      bairro: [''],
-      localidade: [''],
-      uf: [''],
+      logradouro: [{ value: '', disabled: true }],
+      bairro: [{ value: '', disabled: true }],
+      localidade: [{ value: '', disabled: true }],
+      uf: [{ value: '', disabled: true }],
     });
   }
 
@@ -48,5 +69,9 @@ export class GetCepComponent implements OnInit {
       localidade: this.cep[4],
       uf: this.cep[5],
     });
+  }
+
+  resetForm() {
+    this.formCep.reset();
   }
 }
