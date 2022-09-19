@@ -5,8 +5,8 @@ Consulta CEP é um simples projeto criado com Angular + Angular Material Design 
 ### Funcionalidades
 
 - [x] Consultar CEP
-- [ ] Copiar demais dados para área de transferência
-- [ ] Resetar campos
+- [x] Copiar demais dados para área de transferência
+- [x] Resetar campos
 
 ### Rodar o projeto
 
