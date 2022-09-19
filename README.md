@@ -1,27 +1,31 @@
-# ViacepNg
+## Consulta CEP 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+Consulta CEP é um simples projeto criado com Angular + Angular Material Design para treinar alguns conceitos e servir de utilidade para quem precisa dos demais dados referentes ao seu CEP.
 
-## Development server
+### Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [x] Consultar CEP
+- [ ] Copiar demais dados para área de transferência
+- [ ] Resetar campos
 
-## Code scaffolding
+### Rodar o projeto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Você pode rodar o projeto localmente da seguinte forma:
 
-## Build
+- Rode o comando git clone com o link do repositório: <br/>
+`git clone https://github.com/murillo-nahas/viacep-ng.git`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+- Instale as dependências locais e rode o projeto no seu VsCode ou IDE de preferência: <br/>
+`yarn || npm install` para instalar as dependências; 
+`ng serve` para rodar o projeto localmente.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+E então acesse pelo `localhost:4200`
 
-## Running end-to-end tests
+Ou acesse pelo link:
+//
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Materiais
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[Angular - Documentação](https://angular.io/) <br> 
+[Angular Material - Documentação](https://material.angular.io/)
