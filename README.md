@@ -7,6 +7,7 @@ Consulta CEP é um simples projeto criado com Angular + Angular Material Design 
 - [x] Consultar CEP
 - [x] Copiar demais dados para área de transferência
 - [x] Resetar campos
+- [ ] Card de mensagem copiado para área de transferência
 
 ### Rodar o projeto
 
@@ -28,4 +29,5 @@ Ou acesse pelo link:
 ### Materiais
 
 [Angular - Documentação](https://angular.io/) <br> 
-[Angular Material - Documentação](https://material.angular.io/)
+[Angular Material - Documentação](https://material.angular.io/) <br>
+[Viacep API](https://viacep.com.br/)
