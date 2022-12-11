@@ -1,33 +1,40 @@
-## Consulta CEP 
+## Consult ZIP Code
 
-Consulta CEP é um simples projeto criado com Angular + Angular Material Design para treinar alguns conceitos e servir de utilidade para quem precisa dos demais dados referentes ao seu CEP.
+Consult ZIP Code is just a simple project to exercise some concepts and be of use to someone who needs zip code data.
 
-### Funcionalidades
+### Techs
 
-- [x] Consultar CEP
-- [x] Copiar demais dados para área de transferência
-- [x] Resetar campos
-- [ ] Card de mensagem copiado para área de transferência
+Built with:
+- Angular and forms
+- Angular Material
+- [Viacep API](https://viacep.com.br/)
 
-### Rodar o projeto
+### Functionalities
 
-Você pode rodar o projeto localmente da seguinte forma:
+- [x] Consult ZIP Code
+- [x] Copy data to transfer area (like CTRL C)
+- [x] Button to reset fields
+- [ ] Message card with "copied to transfer area"
 
-- Rode o comando git clone com o link do repositório: <br/>
+### Running the app
+
+You can run the app by:
+
+- Git clone: <br/>
 `git clone https://github.com/murillo-nahas/viacep-ng.git`
 
 
-- Instale as dependências locais e rode o projeto no seu VsCode ou IDE de preferência: <br/>
-`yarn || npm install` para instalar as dependências; 
-`ng serve` para rodar o projeto localmente.
+- Install the dependencies: <br/>
+`yarn || npm install`; 
+`ng serve` to run.
 
-E então acesse pelo `localhost:4200`
+And then access by: `localhost:4200`
 
-Ou acesse pelo link:
-[Acesse aqui](https://consulta-cep-two.vercel.app/get-cep)
+Or access by the link instead:
+[Click](https://consulta-cep-two.vercel.app/get-cep)
 
-### Materiais
+### Materials
 
-[Angular - Documentação](https://angular.io/) <br> 
-[Angular Material - Documentação](https://material.angular.io/) <br>
+[Angular - Docs](https://angular.io/) <br> 
+[Angular Material - Docs](https://material.angular.io/) <br>
 [Viacep API](https://viacep.com.br/)
